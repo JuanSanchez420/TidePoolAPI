@@ -44,19 +44,19 @@ const calculateAPR = async (
   const wei0 = network.WETH.equals(pool.token0)
     ? amountInETH
     : token0ETHValue > 0n
-    ? parseUnits(
+      ? parseUnits(
         (amountInETH / token0ETHValue).toString(),
         pool.token0.decimals
       )
-    : 0n
+      : 0n
   const wei1 = network.WETH.equals(pool.token1)
     ? amountInETH
     : token1ETHValue > 0n
-    ? parseUnits(
+      ? parseUnits(
         (amountInETH / token1ETHValue).toString(),
         pool.token1.decimals
       )
-    : 0n
+      : 0n
 
   const [lower, upper] = estimateRange(pool)
 
